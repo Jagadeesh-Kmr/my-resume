@@ -23,7 +23,7 @@ import styled from 'styled-components'
 export const BgContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   min-height: 100vh;
 `
 export const Name = styled.h1`
@@ -48,7 +48,7 @@ export const Bio = styled.p`
   margin: 0;
 `
 export const HrLine = styled.hr`
-  width: 500px;
+  width: 600px;
   margin-top: 40px;
   margin-bottom: 30px;
 `
@@ -98,18 +98,25 @@ export const ContactDetailsContainer = styled.div`
   font-family: 'Roboto';
 `
 
-export const SkillsDetailsContainer = styled.div`
+export const DetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-family: 'Roboto';
 `
-export const Skills = styled.p`
+export const SkillsProjects = styled.p`
   color: #272727;
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
 `
+export const UlList = styled.ul`
+  display: flex;
+`
+export const ListTypes = styled.li`
+  margin-right: 35px;
+`
+
 export const BtnContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -124,7 +131,7 @@ export const Button = styled.button`
   font-size: 16px;
   border: none;
   padding: 10px 16px;
-  margin-top: 10px;
+  margin-top: 20px;
   border-radius: 4px;
   outline: none;
   cursor: pointer;

@@ -14,10 +14,12 @@ import {
   BioContent,
   ContactDetailsContainer,
   ContactHd,
-  SkillsDetailsContainer,
-  Skills,
+  DetailsContainer,
   Button,
   BtnContainer,
+  UlList,
+  ListTypes,
+  SkillsProjects,
 } from './styledComponents'
 
 const Portfolio = () => (
@@ -67,24 +69,39 @@ const Portfolio = () => (
             jagadeesh.1724@gmail.com
           </a>
         </ContactHd>
+        <BtnContainer>
+          <Link to="/contact">
+            <Button type="button">Click To Add Contacts</Button>
+          </Link>
+        </BtnContainer>
         <HrLine />
-        <SkillsDetailsContainer>
-          <Skills>Skills</Skills>
-          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Bootstrap</li>
-            <li>JavaScript</li>
-            <li>React.js</li>
-            <li>Figma</li>
-          </ul>
-        </SkillsDetailsContainer>
+
+        <DetailsContainer>
+          <SkillsProjects>Skills</SkillsProjects>
+          <UlList>
+            <ListTypes>HTML</ListTypes>
+            <ListTypes>CSS</ListTypes>
+            <ListTypes>Bootstrap</ListTypes>
+            <ListTypes>JavaScript</ListTypes>
+            <ListTypes>React.js</ListTypes>
+            <ListTypes>Figma</ListTypes>
+          </UlList>
+        </DetailsContainer>
         <BtnContainer>
           <Link to="/skills">
             <Button type="button">Click To View Skills</Button>
           </Link>
         </BtnContainer>
         <HrLine />
+
+        <DetailsContainer>
+          <SkillsProjects>Projects</SkillsProjects>
+          <UlList>
+            <ListTypes>Jobby App</ListTypes>
+            <ListTypes>Nxt Trendz</ListTypes>
+            <ListTypes>Tasty Kitchens</ListTypes>
+          </UlList>
+        </DetailsContainer>
         <BtnContainer>
           <Link to="/project">
             <Button type="button">Click To View Projects</Button>
