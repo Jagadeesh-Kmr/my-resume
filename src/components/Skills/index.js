@@ -1,6 +1,12 @@
+import {Link} from 'react-router-dom'
+
 import TimeLineView from '../TimeLineView'
 
-import {SkillsBgContainer} from './styledComponents'
+import {
+  SkillsBgContainer,
+  HomeSkillsBtnContainer,
+  HomeSkillsButton,
+} from './styledComponents'
 
 const timelineItemsList = [
   {
@@ -260,6 +266,11 @@ const Skills = () => (
   <>
     <SkillsBgContainer>
       <TimeLineView timelineItemsList={timelineItemsList} />
+      <Link to="/">
+        <HomeSkillsBtnContainer>
+          <HomeSkillsButton type="button">Back to Home</HomeSkillsButton>
+        </HomeSkillsBtnContainer>
+      </Link>
     </SkillsBgContainer>
   </>
 )

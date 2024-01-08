@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom'
+
 import {
   ProjectsBgContainer,
   MyProjects,
@@ -7,6 +9,9 @@ import {
   TechnologiesUsedContainer,
   TechnologiesUsed,
   TechSpan,
+  HomeProjectBtnContainer,
+  HomeProjectButton,
+  LinkElement,
 } from './styledComponents'
 
 const Projects = () => (
@@ -19,15 +24,13 @@ const Projects = () => (
           <ProjectHeading>Jobby App</ProjectHeading>
         </div>
         <div>
-          <p>
-            <a
-              href="https://jagadeeshjb.ccbp.tech/login"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Project1 Link
-            </a>
-          </p>
+          <LinkElement
+            href="https://jagadeeshjb.ccbp.tech/login"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Project1 Link
+          </LinkElement>
         </div>
       </ProjectHadingContainer>
       <TechnologiesUsedContainer>
@@ -63,15 +66,13 @@ const Projects = () => (
           </ProjectHeading>
         </div>
         <div>
-          <p>
-            <a
-              href="https://jagadeeshsp.ccbp.tech/login"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Project2 Link
-            </a>
-          </p>
+          <LinkElement
+            href="https://jagadeeshsp.ccbp.tech/login"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Project2 Link
+          </LinkElement>
         </div>
       </ProjectHadingContainer>
       <TechnologiesUsedContainer>
@@ -101,15 +102,13 @@ const Projects = () => (
           <ProjectHeading>Tasty Kitchens (Swiggy/Zomato Clone)</ProjectHeading>
         </div>
         <div>
-          <p>
-            <a
-              href="https://jagadeeshkmrapp.ccbp.tech/login"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Project3 Link
-            </a>
-          </p>
+          <LinkElement
+            href="https://jagadeeshkmrapp.ccbp.tech/login"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Project3 Link
+          </LinkElement>
         </div>
       </ProjectHadingContainer>
       <TechnologiesUsedContainer>
@@ -140,6 +139,11 @@ const Projects = () => (
           </li>
         </ul>
       </TechnologiesUsedContainer>
+      <Link to="/">
+        <HomeProjectBtnContainer>
+          <HomeProjectButton type="button">Back To Profile</HomeProjectButton>
+        </HomeProjectBtnContainer>
+      </Link>
     </ProjectsBgContainer>
   </>
 )

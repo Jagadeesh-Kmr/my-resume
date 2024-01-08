@@ -5,23 +5,24 @@ import ContactInfo from '../ContactInfo'
 
 import {
   BgContainer,
-  NotesH1,
-  TitleInput,
-  CommentTextInput,
+  ContactH1,
+  ContactInputForm,
+  ContactInput,
+  MessageInput,
   SendButton,
-  NotesInputForm,
-  ContactList,
+  ContactListUl,
   EmptyImage,
-  EmptyNotesP,
-  EmptyNotesH1,
-  EmptyNotesContainer,
+  EmptyMessageP,
+  EmptyContactContainer,
   Label,
+  ReqMsg,
 } from './styledComponents'
 
 const ContactForm = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
+  const [requiredDetails, setReqMsg] = useState('')
   const [contacts, setContactList] = useState([])
 
   const onChangeName = event => {
@@ -36,6 +37,10 @@ const ContactForm = () => {
     setMessage(event.target.value)
   }
 
+  const renderRequiredDetails = () => {
+    setReqMsg('*Required Details')
+  }
+
   const submitForm = e => {
     e.preventDefault()
     const contactList = {
@@ -44,11 +49,15 @@ const ContactForm = () => {
       email,
       message,
     }
-
-    setContactList(prevState => [...prevState, contactList])
-    setName('')
-    setEmail('')
-    setMessage('')
+    if (name.length === 0 || email.length === 0 || message.length === 0) {
+      renderRequiredDetails()
+    } else {
+      setContactList(prevState => [...prevState, contactList])
+      setName('')
+      setEmail('')
+      setMessage('')
+      setReqMsg('')
+    }
   }
 
   const contactLength = contacts.length === 0
@@ -56,10 +65,10 @@ const ContactForm = () => {
   return (
     <>
       <BgContainer>
-        <NotesH1>Contact Form</NotesH1>
-        <NotesInputForm onSubmit={submitForm}>
+        <ContactH1>Contact Form</ContactH1>
+        <ContactInputForm onSubmit={submitForm}>
           <Label htmlFor="name">Name</Label>
-          <TitleInput
+          <ContactInput
             placeholder="enter name"
             type="text"
             id="name"
@@ -67,7 +76,7 @@ const ContactForm = () => {
             onChange={onChangeName}
           />
           <Label htmlFor="email">Email</Label>
-          <TitleInput
+          <ContactInput
             placeholder="enter email"
             type="text"
             id="email"
@@ -75,30 +84,31 @@ const ContactForm = () => {
             onChange={onChangeEmail}
           />
           <Label htmlFor="message">Message</Label>
-          <CommentTextInput
+          <MessageInput
             placeholder="enter your message"
             row="6"
             id="message"
             value={message}
             onChange={onChangeMessage}
           />
+          <ReqMsg>{requiredDetails}</ReqMsg>
           <SendButton type="submit">Send</SendButton>
-        </NotesInputForm>
+        </ContactInputForm>
+
         {contactLength ? (
-          <EmptyNotesContainer>
+          <EmptyContactContainer>
             <EmptyImage
               src="https://assets.ccbp.in/frontend/hooks/empty-notes-img.png"
               alt="notes empty"
             />
-            <EmptyNotesH1>No Notes Yet</EmptyNotesH1>
-            <EmptyNotesP>Notes you add will appear here</EmptyNotesP>
-          </EmptyNotesContainer>
+            <EmptyMessageP>No Messages Yet</EmptyMessageP>
+          </EmptyContactContainer>
         ) : (
-          <ContactList>
+          <ContactListUl>
             {contacts.map(eachList => (
               <ContactInfo key={eachList.id} contactLists={eachList} />
             ))}
-          </ContactList>
+          </ContactListUl>
         )}
       </BgContainer>
     </>

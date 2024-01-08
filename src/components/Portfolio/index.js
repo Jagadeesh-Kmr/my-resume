@@ -52,7 +52,7 @@ const Portfolio = () => (
 
       <ContactDetailsContainer>
         <ContactHd>
-          Linkedin:{' '}
+          Linkedin:
           <a
             className="visit-anchor"
             href=" https://www.linkedin.com/in/jagadeesh-kumar-553788213/"
@@ -71,7 +71,7 @@ const Portfolio = () => (
         </ContactHd>
         <BtnContainer>
           <Link to="/contact">
-            <Button type="button">Click To Add Contacts</Button>
+            <Button type="button">Click To Contact</Button>
           </Link>
         </BtnContainer>
         <HrLine />

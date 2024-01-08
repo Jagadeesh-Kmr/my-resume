@@ -25,6 +25,15 @@ export const BgContainer = styled.div`
   align-items: center;
   justify-content: space-around;
   min-height: 100vh;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-left: 140px;
+    padding-bottom: 30px;
+  }
 `
 export const Name = styled.h1`
   font-family: 'Roboto';
@@ -51,6 +60,9 @@ export const HrLine = styled.hr`
   width: 600px;
   margin-top: 40px;
   margin-bottom: 30px;
+  @media screen and (max-width: 768px) {
+    width: 500px;
+  }
 `
 
 export const Education = styled.p`
@@ -77,6 +89,10 @@ export const BioLine = styled.div`
   color: #272727;
   font-weight: 600;
   margin-top: 0;
+  @media screen and (max-width: 768px) {
+    display: none;
+    margin: 0;
+  }
 `
 export const BioContent = styled.p`
   color: #2c364c;
@@ -96,6 +112,10 @@ export const ContactDetailsContainer = styled.div`
   justify-content: center;
   margin-top: 80px;
   font-family: 'Roboto';
+  @media screen and (max-width: 768px) {
+    margin-top: 0;
+    padding-left: 110px;
+  }
 `
 
 export const DetailsContainer = styled.div`
@@ -122,6 +142,10 @@ export const BtnContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 768px) {
+    margin-right: 70px;
+    margin-top: 10px;
+  }
 `
 
 export const Button = styled.button`

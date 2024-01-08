@@ -1,8 +1,12 @@
+import {Link} from 'react-router-dom'
+
 import {
   ListItem,
-  NameAndCommentContainer,
-  NameText,
-  CommentText,
+  ContactListContainer,
+  Text,
+  MsgText,
+  HomeBtnContainer,
+  HomeButton,
 } from './styledComponents'
 
 const ContactInfo = props => {
@@ -11,11 +15,16 @@ const ContactInfo = props => {
   return (
     <>
       <ListItem>
-        <NameAndCommentContainer>
-          <NameText>NAME: {name}</NameText>
-          <CommentText>EMAIL:{email}</CommentText>
-          <CommentText>MESSAGE:{message}</CommentText>
-        </NameAndCommentContainer>
+        <ContactListContainer>
+          <Text>NAME: {name}</Text>
+          <Text>EMAIL: {email}</Text>
+          <MsgText>MESSAGE: {message}</MsgText>
+          <Link to="/">
+            <HomeBtnContainer>
+              <HomeButton type="button">Bact To Profile</HomeButton>
+            </HomeBtnContainer>
+          </Link>
+        </ContactListContainer>
       </ListItem>
     </>
   )
